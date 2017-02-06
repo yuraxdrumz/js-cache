@@ -2,9 +2,8 @@ const Promise = require('bluebird');
 
 let cache = {};
 
-let mainFunc = (key,value,ttl) =>{
-  ttl = ttl || 10000;
-  value.ttl = ttl;
+const mainFunc = (key,value,ttl) =>{
+  value.ttl = ttl || 10000;
   cache[key] = value;
   return key
 };
