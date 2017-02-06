@@ -48,11 +48,7 @@ const setCache = (key, value, ttl) =>{
   });
 };
 
-const getCache = key =>{
-  return Promise.try(()=>{
-    return cache[key]
-  })
-};
+const getCache = key => Promise.try(()=> cache[key]);
 
 setInterval(()=>checkTTL(),1000);
 
